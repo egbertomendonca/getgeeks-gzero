@@ -10,11 +10,18 @@ Go To Geek Form
 Fill Geek Form
     [Arguments]     ${geek_profile}
 
+    Reset Geek Form
+
     Fill text       id=whatsapp     ${geek_profile}[whats]    
     Fill text       id=desc         ${geek_profile}[desc]
 
-    Select Options By       id=printer_repair       text       ${geek_profile}[printer_repair]   
-    Select Options By       id=work                 text       ${geek_profile}[work]
+    IF  '${geek_profile}[printer_repair]'
+        Select Options By       id=printer_repair       text       ${geek_profile}[printer_repair]
+    END
+
+    IF  '${geek_profile}[work]'
+        Select Options By       id=work                 text       ${geek_profile}[work]
+    END
 
     Fill text       id=cost         ${geek_profile}[cost]
 
@@ -27,3 +34,5 @@ Geek Form Should Be Success
     Wait For Elements State    css=p >> text=${expected_message}       visible     5
 
 
+Reset Geek Form
+    Execute Javascript      document.getElementsByClassName("be-geek-form")[0].reset();
