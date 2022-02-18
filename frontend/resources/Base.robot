@@ -28,4 +28,4 @@ Start Session
 
 After Test
         ${shot_name}            Screenshot Name
-        Take Screenshot             fullPage=True           filename=${shot_name}
+        Take Screenshot         fullPage=True           filename=${shot_name}
