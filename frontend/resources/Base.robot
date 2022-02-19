@@ -3,10 +3,10 @@ Documentation       Base Test
 
 Library         Browser
 Library         Collections
-Library         Utils.py
+Library         String
 
 Library         factories/Users.py
-
+Library         Utils.py
 
 Resource        actions/_SharedActions.robot
 Resource        actions/AuthActions.robot
@@ -15,6 +15,7 @@ Resource        actions/SignupActions.robot
 
 Resource        Database.robot
 Resource        Helpers.robot
+Resource        Services.robot
 
 *Variables*
 
